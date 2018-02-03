@@ -8,13 +8,14 @@ node_js:
   - '8'
 before_script:
   - npm prune
+script:
+  - npm run build
 deploy:
   provider: script
   skip_cleanup: true
   script:
-    - npx travis-deploy-once "npx semantic-release"
-    - npm run build
     - npm run deploy
+    - npx travis-deploy-once "npx semantic-release"
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
