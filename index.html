@@ -48,8 +48,14 @@ export default function Modal({isOpen, onClose, children}) {
     <h2>Documentation</h2>
     <h3>callOnClickAway(callback)</h3>
     <p>Returns a function you can pass as a React or Preact <code>ref</code>, which calls the given callback when the user clicks anywhere outside the rendered element.</p>
+    <p>For instance, if you render this:</p>
+    <pre><code class="language-js">&#x3C;div ref={callOnClickAway(handler)}>Hello!&#x3C;/div>
+</code></pre>
+    <p>then the <code>handler</code> function will be called any time the use clicks outside the div.</p>
     <h2>Caveats</h2>
     <h3>Using component style libraries with <code>click-away</code></h3>
-    <p>If you're using <code>emotion</code>, <code>styled-components</code>, <code>glamorous</code>, or similar, keep in mind you need to use <code>innerRef</code> instead of <code>ref</code>.</p>
+    <p>If you're using <code>emotion</code>, <code>styled-components</code>, <code>glamorous</code>, or similar, keep in mind you need to pass the callback to <code>innerRef</code> instead of <code>ref</code>.</p>
+    <h2>Contributing</h2>
+    <p>This project uses <a href="https://github.com/conventional-changelog/conventional-changelog/blob/master/packages/conventional-changelog-eslint/readme.md">ESLint-style commit messages</a>.</p>
   </body>
 </html>
