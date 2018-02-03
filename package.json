@@ -15,7 +15,7 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "release": {
-    "branch": "develop",
+    "branch": "master",
     "analyzeCommits": {
       "preset": "eslint",
       "releaseRules": [
