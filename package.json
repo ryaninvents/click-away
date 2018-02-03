@@ -1,8 +1,9 @@
 {
   "name": "click-away",
-  "version": "0.0.0-development",
+  "version": "0.0.0-semantically-released",
   "description": "",
   "main": "index.js",
+  "homepage": "https://r24y.github.io/click-away",
   "scripts": {
     "clean": "rm -rf dist",
     "build": "npm-run-all clean build:examples build:readme",

@@ -2,8 +2,7 @@ function callOnClickAway(onClickOut) {
     var currentRef = null;
 
     function callback(clickEvent) {
-        if (!currentRef) return;
-        if (currentRef.contains(clickEvent.target)) return;
+        if (!currentRef || currentRef.contains(clickEvent.target)) return;
         document.removeEventListener('click', callback, true);
         onClickOut(clickEvent);
     };

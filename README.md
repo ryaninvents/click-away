@@ -55,8 +55,20 @@ export default function Modal({isOpen, onClose, children}) {
 
 Returns a function you can pass as a React or Preact `ref`, which calls the given callback when the user clicks anywhere outside the rendered element.
 
+For instance, if you render this:
+
+```js
+<div ref={callOnClickAway(handler)}>Hello!</div>
+```
+
+then the `handler` function will be called any time the use clicks outside the div.
+
 ## Caveats
 
 ### Using component style libraries with `click-away`
 
-If you're using `emotion`, `styled-components`, `glamorous`, or similar, keep in mind you need to use `innerRef` instead of `ref`.
+If you're using `emotion`, `styled-components`, `glamorous`, or similar, keep in mind you need to pass the callback to `innerRef` instead of `ref`.
+
+## Contributing
+
+This project uses [ESLint-style commit messages](https://github.com/conventional-changelog/conventional-changelog/blob/master/packages/conventional-changelog-eslint/readme.md).
