@@ -1,0 +1,73 @@
+/* Modal styles */
+.modal {
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    max-width: 80%;
+    padding: 1em;
+}
+
+.modal-open, .dropmenu-open {
+    visibility: visible;
+}
+
+.modal-closed, .dropmenu-closed {
+    visibility: hidden;
+}
+
+/* Dropdown styles */
+.dropdown-wrapper {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.dropdown-wrapper > button {
+    margin-bottom: 0;
+}
+
+.dropdown-wrapper.dropdown-open > button {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.dropmenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    text-align: left;
+    background-color: white;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border: 1px solid #888;
+    line-height: 1.1;
+    padding: 2px;
+    margin-top: -1px;
+}
+
+.dropmenu > div {
+    padding: 2px;
+}
+
+/* Basic styling for demo */
+
+.demo-wrapper {
+    display: flex;
+    width: 100%;
+    height: 20em;
+    background-color: #888;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+body {
+    max-width: 40em;
+    margin: auto;
+    padding-top: 2rem;
+}
+
+#root {
+    text-align: center;
+}
