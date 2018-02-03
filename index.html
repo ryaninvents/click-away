@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <h1>click-away</h1>
+    <p>Perform an action when the user clicks away from an element of interest, such as a popup, dropdown, or modal.</p>
+    <p><a href="./examples/dropdown">Dropdown example</a> | <a href="./examples/modal">Modal example</a></p>
+    <h2>Installation</h2>
+    <pre><code class="language-bash"># npm
+npm install --save click-away
+
+# yarn
+yarn add click-away
+</code></pre>
+    <h2>Usage</h2>
+    <p>Suppose you're working on a <code>Modal</code> component that renders a dialog box, and you wish to close the modal if the user clicks away.</p>
+    <pre><code class="language-js">import React from 'react';
+
+// Not shown: CSS rules for `.modal`, `.modal-open`, `.modal-closed`
+
+export default function Modal({isOpen, onClose, children}) {
+    const className = `modal modal-${isOpen ? 'open' : 'closed'}`;
+    return (
+        &#x3C;div className={className}>
+            {children}
+        &#x3C;/div>
+    );
+}
+</code></pre>
+    <p>Adding behavior to close the modal is as easy as passing <code>click-away</code> as a <code>ref</code>, with a reference to the callback you wish to use:</p>
+    <pre><code class="language-js">import React from 'react';
+import callOnClickAway from 'click-away';
+
+export default function Modal({isOpen, onClose, children}) {
+    const className = `modal modal-${isOpen ? 'open' : 'closed'}`;
+    return (
+        &#x3C;div className={className} ref={callOnClickAway(onClose)}>
+            {children}
+        &#x3C;/div>
+    );
+}
+</code></pre>
+    <h2>Documentation</h2>
+    <h3>callOnClickAway(callback)</h3>
+    <p>Returns a function you can pass as a React or Preact <code>ref</code>, which calls the given callback when the user clicks anywhere outside the rendered element.</p>
+    <h2>Caveats</h2>
+    <h3>Using component style libraries with <code>click-away</code></h3>
+    <p>If you're using <code>emotion</code>, <code>styled-components</code>, <code>glamorous</code>, or similar, keep in mind you need to use <code>innerRef</code> instead of <code>ref</code>.</p>
+  </body>
+</html>
