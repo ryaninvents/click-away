@@ -10,12 +10,9 @@ before_script:
   - npm prune
 script:
   - npm run build
-deploy:
-  provider: script
-  skip_cleanup: true
-  script:
-    - npm run deploy
-    - npx travis-deploy-once "npx semantic-release"
+after_success:
+  - npm run deploy
+  - npx travis-deploy-once "npx semantic-release"
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
