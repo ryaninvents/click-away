@@ -8,10 +8,13 @@ node_js:
   - '8'
 before_script:
   - npm prune
-after_success:
-  - npm run semantic-release
-  - npm run build
-  - npm run deploy
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+    - npx travis-deploy-once "npx semantic-release"
+    - npm run build
+    - npm run deploy
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
