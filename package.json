@@ -10,7 +10,7 @@
     "build:readme": "gulp render-readme",
     "build:example:modal": "parcel build --public-url ./ --out-dir dist/examples/modal ./examples/modal/index.html",
     "build:example:dropdown": "parcel build --public-url ./ --out-dir dist/examples/dropdown ./examples/dropdown/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"No test specified\"",
     "deploy": "gh-pages -d dist",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
