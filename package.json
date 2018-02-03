@@ -1,6 +1,6 @@
 {
   "name": "click-away",
-  "version": "0.0.0-semantically-versioned",
+  "version": "0.0.0-development",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,13 +10,28 @@
     "build:readme": "gulp render-readme",
     "build:example:modal": "parcel build --public-url ./ --out-dir dist/examples/modal ./examples/modal/index.html",
     "build:example:dropdown": "parcel build --public-url ./ --out-dir dist/examples/dropdown ./examples/dropdown/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "release": {
+    "branch": "develop",
+    "analyzeCommits": {
+      "preset": "eslint",
+      "releaseRules": [
+        {
+          "tag": "Docs",
+          "scope": "README",
+          "release": "patch"
+        }
+      ]
+    }
   },
   "author": "Ryan Muller Kennedy <r24y@users.noreply.github.com>",
   "license": "MIT",
   "devDependencies": {
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
+    "conventional-changelog-eslint": "^1.0.0",
     "gulp": "^3.9.1",
     "gulp-cli": "^2.0.1",
     "npm-run-all": "^4.1.2",
@@ -28,6 +43,11 @@
     "rehype-stringify": "^3.0.0",
     "remark-parse": "^5.0.0",
     "remark-rehype": "^3.0.0",
+    "semantic-release": "^12.4.1",
     "unified": "^6.1.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/r24y/click-away.git"
   }
 }
